@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:temp_and_humidity/const/my_colors.dart';
+import 'package:temp_and_humidity/const/my_texts.dart';
+import 'package:temp_and_humidity/pages/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,32 +15,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                      MyColors.firstColor,
-                      MyColors.secondColor,
-                    ])),
-              ),
-              Container(
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: Container(child: Image.asset("images/robot.png")),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      home: LoginPage(),
     );
   }
 }
