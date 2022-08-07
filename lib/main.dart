@@ -27,14 +27,11 @@ class _MyAppState extends State<MyApp> {
                       MyColors.secondColor,
                     ])),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 5),
-                      child: Container(child: Image.asset("images/robot.png")),
-                    ),
+              Container(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 5),
+                    child: Container(child: Image.asset("images/robot.png")),
                   ),
                 ),
               ),
