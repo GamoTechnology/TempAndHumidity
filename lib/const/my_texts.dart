@@ -26,4 +26,16 @@ class MyTexts {
       fontFamily: "Inter",
       fontStyle: FontStyle.normal,
       fontSize: 20.0);
+  static const homePageUsed = const TextStyle(
+      color: const Color(0xbfffffff),
+      fontWeight: FontWeight.w400,
+      fontFamily: "Inter",
+      fontStyle: FontStyle.normal,
+      fontSize: 18.0);
+  static const homePageCenter = const TextStyle(
+      color: const Color(0xffffffff),
+      fontWeight: FontWeight.w500,
+      fontFamily: "Inter",
+      fontStyle: FontStyle.normal,
+      fontSize: 20.0);
 }
