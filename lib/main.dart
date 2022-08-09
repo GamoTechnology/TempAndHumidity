@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp_and_humidity/pages/device_value_show.dart';
 import 'package:temp_and_humidity/pages/home_page.dart';
 import 'package:temp_and_humidity/pages/login_page.dart';
 
@@ -13,8 +14,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        home: SafeArea(
+          child: DeviceValueShow(),
+        ));
   }
 }

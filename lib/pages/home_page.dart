@@ -9,85 +9,192 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0x80400800), Color(0xffA0E1DD)],
-              ),
-            ),
-            child: Column(
+      appBar: myAppBar(),
+      bottomNavigationBar: myBottomNavigationBar(),
+      body: Container(
+        color: MyColors.secondColor,
+        child: Column(
+          children: [
+            //newMethod2(),
+            newWidget(),
+            Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Icons.menu,
-                        color: MyColors.IconColor,
-                        size: 50,
-                      ),
-                      Text(
-                        "Home",
-                        style: MyTexts.title2,
-                      ),
-                      Icon(
-                        Icons.add,
-                        color: MyColors.IconColor,
-                        size: 50,
-                      )
-                    ],
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [roomWidget(), roomWidget()],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 24),
-                  child: Container(
-                    width: 350,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      color: const Color(0x80189bfa),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            "Used electricity",
-                            style: MyTexts.homePageUsed,
-                          ),
-                          Text(
-                            "100.5 Kwh of 200 Kwh",
-                            style: MyTexts.homePageCenter,
-                          ),
-                          Container(
-                            width: 135,
-                            height: 36,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                color: MyColors.WhiteColor),
-                            child: Text("View Detail",
-                                style: MyTexts.subtitle,
-                                textAlign: TextAlign.center),
-                          )
-                        ],
-                      ),
-                    ),
+                  padding: const EdgeInsets.only(right: 10, left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [roomWidget(), roomWidget()],
                   ),
                 ),
               ],
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  BottomNavigationBar myBottomNavigationBar() {
+    return BottomNavigationBar(
+      backgroundColor: MyColors.WhiteColor,
+      type: BottomNavigationBarType.fixed,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home, color: MyColors.firstColor),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.school,
+            color: MyColors.firstColor,
           ),
+          label: 'School',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.settings, color: MyColors.firstColor),
+          label: 'Settings',
+        ),
+      ],
+      selectedItemColor: MyColors.firstColor,
+      onTap: (int) {},
+    );
+  }
+
+  AppBar myAppBar() {
+    return AppBar(
+      shadowColor: MyColors.WhiteColor,
+      title: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Home",
+              style: TextStyle(color: MyColors.firstColor),
+            ),
+            Icon(
+              Icons.add,
+              color: MyColors.firstColor,
+              size: 40,
+            )
+          ],
+        ),
+      ),
+      backgroundColor: MyColors.WhiteColor,
+    );
+  }
+
+  Padding newMethod2() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Home",
+            style: MyTexts.title2,
+          ),
+          Icon(
+            Icons.add,
+            color: MyColors.IconColor,
+            size: 40,
+          )
         ],
+      ),
+    );
+  }
+
+  Container roomWidget() {
+    return Container(
+      width: 165,
+      height: 175,
+      decoration: new BoxDecoration(
+        color: MyColors.WhiteColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: CircleAvatar(
+                radius: 20,
+                backgroundColor: MyColors.firstColor,
+                child: Icon(
+                  Icons.car_crash,
+                  color: MyColors.WhiteColor,
+                )),
+          ),
+          SizedBox(),
+          SizedBox(),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Living Room",
+                  style: MyTexts.subtitle,
+                ),
+                Text(
+                  "10 Devices",
+                  style: MyTexts.subTitle3,
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Padding newWidget() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 24),
+      child: Container(
+        width: 343,
+        height: 200,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+            color: MyColors.firstColorLight),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Used electricity",
+                style: MyTexts.homePageUsed,
+              ),
+              Text(
+                "100.5 Kwh of 200 Kwh",
+                style: MyTexts.homePageCenter,
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: 135,
+                height: 36,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: MyColors.WhiteColor),
+                child: Text(
+                  "View Detail",
+                  style: MyTexts.subtitle,
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

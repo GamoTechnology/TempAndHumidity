@@ -9,7 +9,7 @@ class MyTexts {
       fontStyle: FontStyle.normal,
       fontSize: 32.0);
   static const title2 = const TextStyle(
-      color: const Color(0xffffffff),
+      color: MyColors.firstColor,
       fontWeight: FontWeight.w700,
       fontFamily: "OpenSans",
       fontStyle: FontStyle.normal,
@@ -33,6 +33,18 @@ class MyTexts {
       fontStyle: FontStyle.normal,
       fontSize: 18.0);
   static const homePageCenter = const TextStyle(
+      color: const Color(0xffffffff),
+      fontWeight: FontWeight.w500,
+      fontFamily: "Inter",
+      fontStyle: FontStyle.normal,
+      fontSize: 20.0);
+  static const subTitle3 = const TextStyle(
+      color: const Color(0xff74cacb),
+      fontWeight: FontWeight.w600,
+      fontFamily: "OpenSans",
+      fontStyle: FontStyle.normal,
+      fontSize: 12.0);
+  static const subtitle4 = const TextStyle(
       color: const Color(0xffffffff),
       fontWeight: FontWeight.w500,
       fontFamily: "Inter",
