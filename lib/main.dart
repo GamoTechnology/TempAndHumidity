@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp_and_humidity/const/my_AppBar.dart';
 import 'package:temp_and_humidity/pages/device_value_show.dart';
 import 'package:temp_and_humidity/pages/home_page.dart';
 import 'package:temp_and_humidity/pages/login_page.dart';
@@ -16,7 +17,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SafeArea(
-          child: LoginPage(),
+          child: DeviceValueShow(),
         ));
   }
 }

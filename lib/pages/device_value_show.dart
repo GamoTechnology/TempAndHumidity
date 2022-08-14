@@ -14,7 +14,12 @@ class _MyAppState extends State<DeviceValueShow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: myAppBar(),
+      appBar: myAppBar(
+        title: 'Detaylar',
+        textColorStyle: MyTexts.title2,
+        centerTitle: true,
+        isLeading: false,
+      ),
       bottomNavigationBar: myBottomNavigationBar(),
       body: Container(
         color: MyColors.secondColor,
@@ -26,32 +31,32 @@ class _MyAppState extends State<DeviceValueShow> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
+                    const Text(
                       "Daily",
                       style: MyTexts.subtitle4,
                     ),
                     Container(
                       alignment: Alignment.center,
-                      child: Text(
+                      child: const Text(
                         "Monthly",
                         style: MyTexts.subtitle2,
                       ),
                       height: 36,
                       width: 110,
-                      margin: EdgeInsets.only(),
+                      margin: const EdgeInsets.only(),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(25),
                       ),
                     ),
-                    Text(
+                    const Text(
                       "Daily",
                       style: MyTexts.subtitle4,
                     ),
                   ],
                 ),
                 height: 45,
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   left: 16,
                   right: 16,
                 ),
@@ -94,7 +99,7 @@ class _MyAppState extends State<DeviceValueShow> {
               padding: const EdgeInsets.only(top: 8, bottom: 8),
               child: SfCartesianChart(
                   primaryXAxis: CategoryAxis(
-                    labelStyle: TextStyle(
+                    labelStyle: const TextStyle(
                       color: MyColors.WhiteColor,
                     ),
                   ),
@@ -123,7 +128,7 @@ class _MyAppState extends State<DeviceValueShow> {
                         yValueMapper: (SalesData sales, _) => sales.sales,
                         color: MyColors.firstColorLight,
                         // Enable data label
-                        dataLabelSettings: DataLabelSettings(
+                        dataLabelSettings: const DataLabelSettings(
                           isVisible: false,
                         ))
                   ]),
@@ -132,7 +137,7 @@ class _MyAppState extends State<DeviceValueShow> {
                 width: 355,
                 height: 100,
                 decoration: new BoxDecoration(
-                    color: Color(0xffffffff),
+                    color: const Color(0xffffffff),
                     borderRadius: BorderRadius.circular(10)))
           ],
         ),
@@ -146,20 +151,3 @@ class SalesData {
   final String year;
   final double sales;
 }
-
-AppBar myAppBar() {
-  return AppBar(
-    shadowColor: MyColors.WhiteColor,
-    centerTitle: true,
-    title: Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Text(
-        "Device",
-        style: MyTexts.title2,
-      ),
-    ),
-    backgroundColor: MyColors.WhiteColor,
-  );
-}
-
-

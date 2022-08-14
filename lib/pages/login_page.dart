@@ -4,11 +4,14 @@ import 'package:temp_and_humidity/const/my_spaces.dart';
 import '../const/my_colors.dart';
 import '../const/my_texts.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({
-    Key? key,
-  }) : super(key: key);
+class loginPage extends StatefulWidget {
+  loginPage({Key? key}) : super(key: key);
 
+  @override
+  State<loginPage> createState() => _loginPageState();
+}
+
+class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +52,7 @@ class LoginPage extends StatelessWidget {
                   //     ),
                   //   ),
                   // ),
-                  Image.asset("assets/image/macit.jpeg"),
+
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Text(
