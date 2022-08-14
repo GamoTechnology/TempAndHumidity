@@ -1,0 +1,80 @@
+Column(
+          children: [
+            //newMethod2(),
+            newWidget(),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      myRoom(
+                        title: "Living Room",
+                        deviceCount: 10,
+                        icon: Icon(Icons.car_crash),
+                      ),
+                      myRoom(
+                        title: "Bed Room",
+                        deviceCount: 1,
+                        icon: Icon(
+                          Icons.bed_outlined,
+                          color: Color.fromARGB(255, 255, 143, 180),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 10, left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      myRoom(
+                        title: "Living Room",
+                        deviceCount: 10,
+                        icon: Icon(Icons.car_crash),
+                      ),
+                      myRoom(
+                        title: "Living Room",
+                        deviceCount: 10,
+                        icon: Icon(Icons.car_crash),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      
+
+
+
+
+
+
+
+
+      Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: CircleAvatar(
+                    radius: 75,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Device Add",
+                          style: MyTexts.subtitle4,
+                        ),
+                        Icon(Icons.plus_one),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+         

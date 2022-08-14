@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:temp_and_humidity/const/my_AppBar.dart';
 import 'package:temp_and_humidity/const/my_colors.dart';
 import 'package:temp_and_humidity/const/my_texts.dart';
-import 'package:temp_and_humidity/main.dart';
+
 import 'package:temp_and_humidity/pages/device_value_show.dart';
+
+import '../widgets/my_appbar.dart';
+import '../widgets/my_bottom_navigation_bar.dart';
+import '../widgets/my_room.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -16,41 +19,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: myAppBar(
-        title: 'Ana Sayfa',
-        textColorStyle: MyTexts.title2,
-        icon: Icons.add,
-        isLeading: true,
-      ),
-      bottomNavigationBar: myBottomNavigationBar(),
-      body: Container(
-        color: MyColors.secondColor,
-        child: Column(
-          children: [
-            //newMethod2(),
-            newWidget(),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [roomWidget(), roomWidget()],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10, left: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [roomWidget(), roomWidget()],
-                  ),
-                ),
-              ],
-            ),
-          ],
+        appBar: myAppBar(
+          title: 'Ana Sayfa',
+          textColorStyle: MyTexts.title2,
+          icon: Icons.add,
+          isLeading: true,
         ),
-      ),
-    );
+        bottomNavigationBar: myBottomNavigationBar(),
+        body: Center(
+            child: Container(
+          color: MyColors.secondColor,
+          child: Center(),
+        )));
   }
 }
 
@@ -68,51 +48,6 @@ Padding newMethod2() {
           Icons.add,
           color: MyColors.IconColor,
           size: 40,
-        )
-      ],
-    ),
-  );
-}
-
-Container roomWidget() {
-  return Container(
-    width: 165,
-    height: 175,
-    decoration: new BoxDecoration(
-      color: MyColors.WhiteColor,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: CircleAvatar(
-              radius: 20,
-              backgroundColor: MyColors.firstColor,
-              child: Icon(
-                Icons.car_crash,
-                color: MyColors.WhiteColor,
-              )),
-        ),
-        SizedBox(),
-        SizedBox(),
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Living Room",
-                style: MyTexts.subtitle,
-              ),
-              Text(
-                "10 Devices",
-                style: MyTexts.subTitle3,
-              )
-            ],
-          ),
         )
       ],
     ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:temp_and_humidity/const/my_AppBar.dart';
 import 'package:temp_and_humidity/const/my_texts.dart';
 
 import '../const/my_colors.dart';
+import '../widgets/my_appbar.dart';
+import '../widgets/my_bottom_navigation_bar.dart';
 
 class DeviceValueShow extends StatefulWidget {
   @override
