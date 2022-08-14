@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:temp_and_humidity/const/my_AppBar.dart';
 import 'package:temp_and_humidity/const/my_texts.dart';
 
 import '../const/my_colors.dart';
@@ -161,28 +162,4 @@ AppBar myAppBar() {
   );
 }
 
-BottomNavigationBar myBottomNavigationBar() {
-  return BottomNavigationBar(
-    backgroundColor: MyColors.WhiteColor,
-    type: BottomNavigationBarType.fixed,
-    items: const <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home, color: MyColors.firstColor),
-        label: 'Home',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(
-          Icons.school,
-          color: MyColors.firstColor,
-        ),
-        label: 'School',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.settings, color: MyColors.firstColor),
-        label: 'Settings',
-      ),
-    ],
-    selectedItemColor: MyColors.firstColor,
-    onTap: (int) {},
-  );
-}
+

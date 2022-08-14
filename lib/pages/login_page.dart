@@ -49,7 +49,7 @@ class LoginPage extends StatelessWidget {
                   //     ),
                   //   ),
                   // ),
-                  Placeholder(),
+                  Image.asset("assets/image/macit.jpeg"),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Text(

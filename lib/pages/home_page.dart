@@ -3,6 +3,8 @@ import 'package:temp_and_humidity/const/my_colors.dart';
 import 'package:temp_and_humidity/const/my_texts.dart';
 import 'package:temp_and_humidity/main.dart';
 
+import '../const/my_AppBar.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -38,56 +40,6 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  BottomNavigationBar myBottomNavigationBar() {
-    return BottomNavigationBar(
-      backgroundColor: MyColors.WhiteColor,
-      type: BottomNavigationBarType.fixed,
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home, color: MyColors.firstColor),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.school,
-            color: MyColors.firstColor,
-          ),
-          label: 'School',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings, color: MyColors.firstColor),
-          label: 'Settings',
-        ),
-      ],
-      selectedItemColor: MyColors.firstColor,
-      onTap: (int) {},
-    );
-  }
-
-  AppBar myAppBar() {
-    return AppBar(
-      shadowColor: MyColors.WhiteColor,
-      title: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              "Home",
-              style: TextStyle(color: MyColors.firstColor),
-            ),
-            Icon(
-              Icons.add,
-              color: MyColors.firstColor,
-              size: 40,
-            )
-          ],
-        ),
-      ),
-      backgroundColor: MyColors.WhiteColor,
     );
   }
 

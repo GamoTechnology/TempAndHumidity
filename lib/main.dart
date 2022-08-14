@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SafeArea(
-          child: DeviceValueShow(),
+          child: LoginPage(),
         ));
   }
 }
